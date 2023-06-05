@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .wufoo {
+                font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+            }
+        </style>
+        <title>Order Form</title>
+    </head>
+    <body>
+        <div>
+        <h1>ORDER FORM</h1>
+        <select name="order">
+            <option value="A">A</option>
+            <option value="B">B (+$0.5)</option>
+            <option value="C">C (+$0.5)</option>
+        </select>
+        <p>How many would you like to order?</p><br>
+        <input type="radio"> 1 - $10 <br>
+        <input type="radio"> 2 - $20 <br>
+        <input type="radio"> 3 - $30 <br>
+        <hr>
+        </div>
+        <h2>Information</h2>
+        <div>
+            <label>First Name</label><br>
+            <input type="text" required>
+        </div>
+        <div>
+            <label>Last Name</label><br>
+            <input type="text" required><br><br>
+        </div>
+        <div>
+            <label style="font-weight: 100;">Email</label><br>
+            <input type="text"><br><br>
+        </div>
+        <div>
+            <label>Phone number</label><br>
+            <input name="phone1" type="tel" size="5"> - <input name="phone2" type="tel" size="5"> - <input name="phone3" type="tel" size="5"><br><br>
+        </div>
+        <div>
+            <input type="submit" value="Confirm">
+        </div>
+    </body>
+</html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Signup Form</title>
 </head>
 <body>
@@ -9,28 +11,28 @@
   <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
       <div class="Name">
           <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name" required><br>
+          <input type="text" id="name" name="name" size="30" required><br>
       </div>
       <div class="password">
           <label for="password">Password:</label><br>
-          <input type="password" id="password" name="password" required><br>
+          <input type="password" id="password" name="password" size="30" required><br>
       </div>
       <div class="email">
           <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" required><br>
+          <input type="email" id="email" name="email" size="30" required><br>
       </div>
       <div class="phone">
-         <label for="phone">Số điện thoại</label><br>
-          <input type="tel" id="phone" name="tel" required><br>
+          <label for="phone">Số điện thoại</label><br>
+          <input type="tel" id="phone" name="tel" size="30" required><br>
       </div>
       <div class="gender">
-          <label for="gender">Giới tính:</label><br>
+          <label for="gender">Giới tính:</label>
           <input type="radio" id="male" name="gender" value="male">
-          <label for="male">Nam</label><br>
+          <label for="male">Nam</label>
           <input type="radio" id="female" name="gender" value="female">
-          <label for="female">Nữ</label><br>
+          <label for="female">Nữ</label>
           <input type="radio" id="other" name="gender" value="other">
-          <label for="other">Khác</label><br><br>
+          <label for="other">Khác</label>
       </div>
       <div>
           <input type="submit" value="Đăng ký">

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chuyển đổi tiền tệ</title>
+    </head>
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Ammount</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="amnt" id="Amount" placeholder="Nhập số tiền cần quy đổi"></td>
+                    <td>
+                        <select name="From" id="From">
+                            <option value="VND" name="vnd" id="VND">VNĐ</option>
+                            <option value="USD" name="usd" id="USD">USD</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="To" id="To">
+                            <option value="USD" name="usd" id="USD">USD</option>
+                            <option value="VND" name="vnd" id="VND">VND</option>
+                        </select>
+                    </td>
+                    <td><button onclick="ChangeMoney()">Chuyển đổi</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="Result"></p>
+        <script>
+            function ChangeMoney() {
+                let Amount = document.getElementById("Amount").value;
+                let FromC = document.getElementById("From").value;
+                let To = document.getElementById("To").value;
+                let Result;
+
+
+                if (FromC == "USD" && To == "VND") {
+                Result = "Result: " + (Amount * 23000) + " Đ";
+                }
+                else if (FromC == "VND"&& To =="USD") {
+                Result = "Result: " + " $" + (Amount / 23000);
+                }
+                else if (FromC == "VND") {
+                Result = "Result: " + Amount + " Đ"
+                } else {
+                Result = "Result: " + Amount + " $"
+                }
+        
+                document.getElementById("Result").innerHTML = Result;
+            }
+        </script>
+    </body>
+</html>

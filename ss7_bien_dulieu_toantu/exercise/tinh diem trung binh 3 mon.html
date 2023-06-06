@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tính điểm trung bình</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Vật lý</th>
+                <th>Hóa</th>
+                <th>Sinh</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input type="number" name="Phys" id="Phys" required></td>
+                <td><input type="number" name="Chem" id="Chem" required></td>
+                <td><input type="number" name="Bio" id="Bio" required></td>
+                <td><button onclick="Average()">Nhập điểm</button></td>
+            </tr>            
+        </table>
+        <p id="Result"></p>
+        <script>
+            function Average() {
+                let a = parseFloat(document.getElementById("Phys").value);
+                let b = parseFloat(document.getElementById("Chem").value);
+                let c = parseFloat(document.getElementById("Bio").value);
+                let d = a + b + c;
+                let Result = "Điểm trung bình: " + (d / 3);
+
+                document.getElementById("Result").innerHTML = Result;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chuyển đổi nhiệt độ</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="2">Nhập độ C để đổi thành độ F</th>
+            </tr>
+            <tr>
+                <td><input type="number" name="C" id="Celc" placeholder="Độ C"></td>
+                <td><button onclick="Change()">Chuyển đổi</button></td>
+            </tr>
+        </table>
+        <p id="Result"></p>
+        <script>
+            function Change() {
+                let celcius = document.getElementById("Celc").value;
+                let Result = celcius + "℃ " + "= " + (celcius * 9 / 5 + 32) + "℉ ";
+                document.getElementById("Result").innerHTML = Result;
+            }            
+        </script>
+    </body>
+</html>

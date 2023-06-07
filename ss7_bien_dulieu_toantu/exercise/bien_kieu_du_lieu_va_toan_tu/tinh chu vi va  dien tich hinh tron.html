@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính chu vi và diện tích hình tròn</title>
+    
+</head>
+<body>
+    <h1>Circle Calculator</h1>
+    <input type="number" id="radius" placeholder="Nhập bán kính"/>
+    <button onclick="calculate()">Tính toán</button>
+    <br>
+    <p id="perimeter"></p>
+    <p id="area"></p>
+
+    <script>
+        function calculate() {
+            var radius = parseFloat(document.getElementById('radius').value); //parseFloat để chuyển đổi số trong String thành float number và có thể sử dụng để làm phép tính
+            var perimeter = 2 * Math.PI * radius; //Math.PI được sử dụng để biểu thị giá trị của π trong JavaScript
+            var area = Math.PI * radius * radius; //Math.PI được sử dụng để biểu thị giá trị của π trong JavaScript
+
+            document.getElementById('perimeter').innerHTML = "Chu vi: " + perimeter.toFixed(2); //.toFixed(2) để làm tròn đến 2 chữ số thập phân. VD: 3,33333333 => 3,33
+            document.getElementById('area').innerHTML = "Diện tích: " + area.toFixed(2); ////.toFixed(2) để làm tròn đến 2 chữ số thập phân
+        }
+    </script>
+</body>
+</html>

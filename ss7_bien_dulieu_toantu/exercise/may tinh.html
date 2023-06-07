@@ -42,6 +42,7 @@
     <style>
         table {
             margin: 0 auto;
+            background-color: #36393e;
         }
 
         button {
@@ -68,25 +69,25 @@
         }
     </style>
     <script>
-        function appendNumber(number) {
+        function appendNumber(number) { //appendNumber(number) dùng để ghi số từ nút bấm lên ô Display và gán giá trị tương tự cho display.value
             let display = document.getElementById('display');
-            display.value += number;
+            display.value += number; //+= dùng để ghi thêm số vừa được bấm vào bên tay phải của ô Display. Vd display.value đang là 5 mà mình ấn thêm số 6 thì màn hình Display sẽ hiển thị 56
         }
 
-        function clearDisplay() {
+        function clearDisplay() { //clearDisplay dùng để xóa dữ liệu trong ô Display
             let display = document.getElementById('display');
             display.value = '';
         }
 
-        function calculate() {
+        function calculate() { //calculate dùng để tính toán các giá trị trên ô Display
             let display = document.getElementById('display');
             let expression = display.value;
 
-            try {
+            try { 
                 let result = eval(expression);
-                display.value = result;
+                display.value = result; //Nếu ko có lỗi gì thì sẽ hiển thị expession lên ô Display
             } catch (error) {
-                display.value = 'Error';
+                display.value = 'Error'; //Hiển thị chữ Error khi biểu thức gặp lỗi, ví dụ: chia cho 0 hoặc lỗi cú pháp
             }
         }
     </script>

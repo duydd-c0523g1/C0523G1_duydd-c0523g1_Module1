@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chỉ số BMI</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Chiều cao</th>
+                <th>Cân nặng</th>
+            </tr>
+            <tr>
+                <td><input type="number" name="weight" id="kg" placeholder="Đơn vị: Kilogram"></td>
+                <td><input type="number" name="height" id="meter" placeholder="Đơn vị: Meter"></td>
+                <td><button onclick="bmi()">Nhập</button></td>
+            </tr>
+        </table>
+        <p id="result" style="font-weight: 60; font-family: sans-serif;"></p>
+    </body>
+    <script>
+        function bmi() {
+            let weight = document.getElementById("kg").value;
+            let height = document.getElementById("meter").value;
+            let bmi = parseFloat(weight) / (parseFloat(height) ** 2);
+            
+
+            if (bmi < 18.5)
+            result = "Bạn " + "bị " + "gầy.";
+            else if (bmi < 25.0)
+            result = "Bạn " + "bình " + "thường.";
+            else if (bmi < 30.0)
+            result = "Bạn " + "bị " + "thừa " + "cân.";
+            else
+            result = "Bạn " + "bị " + " béo " + "phì.";
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</html>

@@ -89,7 +89,7 @@
             let expression = display.value;
 
             try { 
-                let result = eval(expression);
+                let result = eval(expression); //eval: evaluate
                 display.value = result; //Nếu ko có lỗi gì thì sẽ hiển thị expession lên ô Display
             } catch (error) {
                 display.value = 'Error'; //Hiển thị chữ Error khi biểu thức gặp lỗi, ví dụ: chia cho 0 hoặc lỗi cú pháp

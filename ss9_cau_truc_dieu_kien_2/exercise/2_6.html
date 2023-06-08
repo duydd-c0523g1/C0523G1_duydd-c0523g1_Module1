@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tìm x</title>
+    <script>
+        function tinh() {
+            let numA = parseFloat(document.getElementById("numA").value);
+            let numB = parseFloat(document.getElementById("numB").value);
+
+            Equation = numA + "x+" + numB + "= 0";
+
+            if(numA === 0) { 
+                if(numB === 0) {
+                    Result = "Phương trình vô số nghiệm";
+                } else {
+                    Result = "Phương trình vô nghiệm";
+                }
+            } else
+                Result = "Phương trình có nghiệm:" + (-numB / numA);
+                
+                document.getElementById("result").innerHTML = Result;
+                document.getElementById("equation").innerHTML = Equation;
+        }
+    </script>
+  </head>
+  <body>
+    <title>Tìm x trong ax+b=0</title>
+    <label for="numA">Nhập a</label><br>
+    <input type="number" id="numA"><br>
+    <label for="numB">Nhập b</label><br>
+    <input type="number" id="numB"><br><br>
+
+    <button id="cal" onclick="tinh()">Tìm x</button>
+    <p id="equation"></p>
+    <p id="result"></p>
+  </body>
+</html>

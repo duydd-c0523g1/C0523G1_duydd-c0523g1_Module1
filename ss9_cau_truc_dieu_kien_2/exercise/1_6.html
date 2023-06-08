@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tính tiền hoa hồng</title>
+    <script>
+      function inspect() {
+        let sales1 = parseFloat(document.getElementById("sales1").value);
+        let sales2 = parseFloat(document.getElementById("sales2").value);
+        let sales3 = parseFloat(document.getElementById("sales3").value);
+        let sales4 = parseFloat(document.getElementById("sales4").value);
+        let sales5 = parseFloat(document.getElementById("sales5").value);
+        let sales6 = parseFloat(document.getElementById("sales6").value);
+        let sales7 = parseFloat(document.getElementById("sales7").value);
+        let sales8 = parseFloat(document.getElementById("sales8").value);
+        let sales9 = parseFloat(document.getElementById("sales9").value);
+        let sales10 = parseFloat(document.getElementById("sales10").value);
+        let sales11 = parseFloat(document.getElementById("sales11").value);
+        let sales12 = parseFloat(document.getElementById("sales12").value);
+        let sum = (sales1 + sales2 + sales3 + sales4 + sales5 + sales6 + sales7 + sales8 + sales9 + sales10 + sales11 +sales12) * 5 / 100;
+
+
+        result = "Hoa hồng của bạn nhận được cho tới hiện tại là: $" + sum
+
+        
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Tính tiền hoa hồng</h3>
+    <p>Tiền hoa hồng bằng 5% tổng doanh thu</p>
+    <label for="sales1">Doanh số tháng 1</label><br>
+    <span>$</span><input type="number" id="sales1" value="0"><br>
+    <label for="sales2">Doanh số tháng 2</label><br>
+    <span>$</span><input type="number" id="sales2" value="0"><br>
+    <label for="sales3">Doanh số tháng 3</label><br>
+    <span>$</span><input type="number" id="sales3" value="0"><br>
+    <label for="sales4">Doanh số tháng 4</label><br>
+    <span>$</span><input type="number" id="sales4" value="0"><br>
+    <label for="sales5">Doanh số tháng 5</label><br>
+    <span>$</span><input type="number" id="sales5" value="0"><br>
+    <label for="sales6">Doanh số tháng 6</label><br>
+    <span>$</span><input type="number" id="sales6" value="0"><br>
+    <label for="sales7">Doanh số tháng 7</label><br>
+    <span>$</span><input type="number" id="sales7" value="0"><br>
+    <label for="sales8">Doanh số tháng 8</label><br>
+    <span>$</span><input type="number" id="sales8" value="0"><br>
+    <label for="sales9">Doanh số tháng 9</label><br>
+    <span>$</span><input type="number" id="sales9" value="0"><br>
+    <label for="sales10">Doanh số tháng 10</label><br>
+    <span>$</span><input type="number" id="sales10" value="0"><br>
+    <label for="sales11">Doanh số tháng 11</label><br>
+    <span>$</span><input type="number" id="sales11" value="0"><br>
+    <label for="sales12">Doanh số tháng 12</label><br>
+    <span>$</span><input type="number" id="sales12" value="0"><br>
+
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

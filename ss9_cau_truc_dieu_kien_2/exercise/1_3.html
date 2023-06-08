@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xét duyệt số nguyên</title>
+    <script>
+      function inspect() {
+        let num = parseInt(document.getElementById("num").value);
+
+        if (num !== 0) {
+            if (num > 0) {
+                result = num + " lớn hơn 0"
+            } else {
+                result = num + " nhỏ hơn 0"
+            }
+        } else {
+            result = num + " bằng 0"
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="num" placeholder="Nhập một số nguyên">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuyển đổi nhiệt độ</title>
+    <script>
+      function inspect() {
+        let Meter = parseFloat(document.getElementById("Meter").value);
+        let Feet = Meter * 3.2808
+
+        Result = Meter + " mét =" + Feet + " feet";
+
+        document.getElementById("result").innerHTML = Result;
+
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Chuyển đổi mét sang feet</h2>
+    <input type="number" id="Meter" placeholder="Nhập đơn vị mét">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

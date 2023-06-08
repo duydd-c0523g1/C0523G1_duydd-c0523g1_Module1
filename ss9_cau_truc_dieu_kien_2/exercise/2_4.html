@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tính diện tích tam giác vuông</title>
+    <title>Tính diện tích hình chữ nhật</title>
     <script>
       function inspect() {
-        let LengthA = parseFloat(document.getElementById("lengthA").value);
-        let LengthB = parseFloat(document.getElementById("lengthB").value);
+        let Length = parseFloat(document.getElementById("length").value);
+        let Width = parseFloat(document.getElementById("width").value);
         let Unit = document.getElementById("Unit").value;
-        let Area = (0.5 * LengthA) * LengthB
+        let Area = Length * Width;
 
-        Result = "Diện tích tam giác vuông là " + Area + Unit;
+        Result = "Diện tích hình chữ nhật là " + Area + Unit;
 
         document.getElementById("result").innerHTML = Result;
 
@@ -18,9 +18,9 @@
     </script>
   </head>
   <body>
-    <h2>Tính diện tích tam giác vuông</h2>
-    <input type="number" id="lengthA" placeholder="Cạnh a">
-    <input type="number" id="lengthB" placeholder="Cạnh b">
+    <h2>Tính diện tích hình chữ nhật</h2>
+    <input type="number" id="length" placeholder="Nhập chiều dài">
+    <input type="number" id="width" placeholder="Nhập chiều rộng">
     <span>
         <select name="Unit" id="Unit">
             <option value="mm">mm</option>

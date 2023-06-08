@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuyển đổi nhiệt độ</title>
+    <script>
+      function inspect() {
+        let C = parseFloat(document.getElementById("Celcius").value);
+        let F = C * 9 / 5 + 32
+
+        Result = C + " °C =" + F + " °F";
+
+        document.getElementById("result").innerHTML = Result;
+
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Chuyển đổi độ C sang độ F</h2>
+    <input type="number" id="Celcius" placeholder="Nhập độ C">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xét duyệt tuổi</title>
+    <script>
+      function inspect() {
+        let test1 = parseFloat(document.getElementById("test1").value);
+        let test2 = parseFloat(document.getElementById("test2").value);
+        let test3 = parseFloat(document.getElementById("test3").value);
+        let test4 = parseFloat(document.getElementById("test4").value);
+        let test5 = parseFloat(document.getElementById("test5").value);
+        let avrg = (test1 + test2 + test3 + test4 + test5) / 5
+
+        if (avrg >= 9) {
+            result = "Học sinh giỏi."
+        } else if ( avrg >= 7) {
+            result = "Học sinh tiên tiến."
+        } else if (avrg >= 5) {
+            result = "Học sinh trung bình."
+        } else {
+            result = "Học lại."
+        }
+
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="test1" placeholder="Điểm kiểm tra miệng"><br>
+    <input type="number" id="test2" placeholder="Điểm kiểm tra 15 phút"><br>
+    <input type="number" id="test3" placeholder="Điểm kiểm tra 45 phút"><br>
+    <input type="number" id="test4" placeholder="Điểm kiểm tra giữa kỳ"><br>
+    <input type="number" id="test5" placeholder="Điểm kiểm tra học kỳ">
+    <button onclick="inspect()">Xếp loại</button>
+    <p id="result"></p>
+  </body>
+</html>

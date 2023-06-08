@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tính diện tích hình vuông</title>
+    <script>
+      function inspect() {
+        let Length = parseFloat(document.getElementById("length").value);
+        let Unit = document.getElementById("Unit").value;
+        let Area = Length ** 2;
+
+        Result = "Diện tích hình vuông là " + Area + Unit;
+
+        document.getElementById("result").innerHTML = Result;
+
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Tính diện tích hình vuông</h2>
+    <input type="number" id="length" placeholder="Nhập chiều dài cạnh">
+    <span>
+        <select name="Unit" id="Unit">
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="m">m</option>
+        </select>
+    </span>
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Luyen tap 1-1</title>
+    <script>
+      function inspect() {
+        let numA = parseFloat(document.getElementById("numA").value);
+        let numB = parseFloat(document.getElementById("numB").value);
+
+        if (numA % numB == 0) {
+          result = numA + ` chia hết cho ` + numB;
+        } else {
+          result = numA + ` không chia hết cho ` + numB;
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="numA" placeholder="Nhập số a">
+    <input type="number" id="numB" placeholder="Nhập số b">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

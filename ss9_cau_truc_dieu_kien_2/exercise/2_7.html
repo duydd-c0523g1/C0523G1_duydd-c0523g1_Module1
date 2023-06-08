@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Giải phương trình bậc 2</title>
-  <script>
-    function giaiPhuongTrinh() {
-      let a = parseFloat(document.getElementById("a").value);
-      let b = parseFloat(document.getElementById("b").value);
-      let c = parseFloat(document.getElementById("c").value);
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+    <script>
+        function giaiPhuongTrinh() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
 
-      let delta = b * b - 4 * a * c;
+            let delta = b * b - 4 * a * c;
 
-      if (delta > 0) {
-        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
-        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
-        document.getElementById("result").innerHTML = "Phương trình có hai nghiệm:<br>x1 = " + x1 + "<br>x2 = " + x2;
-      } else if (delta === 0) {
-        let x = -b / (2 * a);
-        document.getElementById("result").innerHTML = "Phương trình có một nghiệm kép:<br>x = " + x;
-      } else {
-        document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
-      }
-    }
-  </script>
+            if (delta > 0) {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                document.getElementById("result").innerHTML = "Phương trình có hai nghiệm:<br>x1 = " + x1 + "<br>x2 = " + x2;
+            } else if (delta === 0) {
+                let x = -b / (2 * a);
+                document.getElementById("result").innerHTML = "Phương trình có một nghiệm kép:<br>x = " + x;
+            } else {
+                document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+            }
+        }
+    </script>
 </head>
+
 <body>
-  <h1>Giải phương trình bậc 2</h1>
-  <label for="a">Nhập hệ số a:</label>
-  <input type="number" id="a" placeholder="Nhập a"><br>
+    <h1>Giải phương trình bậc 2</h1>
+    <label for="a">Nhập hệ số a:</label>
+    <input type="number" id="a" placeholder="Nhập a"><br>
 
-  <label for="b">Nhập hệ số b:</label>
-  <input type="number" id="b" placeholder="Nhập b"><br>
+    <label for="b">Nhập hệ số b:</label>
+    <input type="number" id="b" placeholder="Nhập b"><br>
 
-  <label for="c">Nhập hệ số c:</label>
-  <input type="number" id="c" placeholder="Nhập c"><br>
+    <label for="c">Nhập hệ số c:</label>
+    <input type="number" id="c" placeholder="Nhập c"><br>
 
-  <button onclick="giaiPhuongTrinh()">Giải</button>
+    <button onclick="giaiPhuongTrinh()">Giải</button>
 
-  <p id="result"></p>
+    <p id="result"></p>
 </body>
+
 </html>

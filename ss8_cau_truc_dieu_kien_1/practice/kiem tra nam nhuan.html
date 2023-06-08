@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kiểm tra năm nhuận</title>
+    </head>
+    <body>
+        <h4>Kiểm tra năm nhuận</h4>
+        <input type="number" name="year" id="year" placeholder="Nhập năm vào đây">
+        <button id="evaluate" onclick="evalYear()">Kiểm tra</button>
+    </body>
+    <script>   
+        function evalYear() {
+            let year = parseInt(document.getElementById("year").value);
+            let isLeapYear = false;
+
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        isLeapYear = true;                        
+                    }
+                } else {
+                    isLeapYear = true;
+                }                    
+            }
+            if (isLeapYear == true) {
+            alert(year + " là năm nhuận");
+        } else {
+            alert(year + " là năm không nhuận");
+        }
+        }
+    </script>
+</html>

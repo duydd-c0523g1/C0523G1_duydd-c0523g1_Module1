@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xét duyệt tuổi</title>
+    <script>
+      function inspect() {
+        let age = parseFloat(document.getElementById("age").value);
+
+        if (age >= 16) {
+          result = "Bạn đủ tuổi vào học lớp 10";
+        } else {
+          result = "Bạn chưa đủ tuổi vào học lớp 10";
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="age" placeholder="Nhập tuổi của bạn">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -25,8 +25,15 @@
                 case 2:
                     document.getElementById("result").innerHTML = "Tháng " + month + " có 28 hoặc 29 ngày";
                     break;
-                default: 
+                case 4:
+                case 6: 
+                case 8: 
+                case 9:
                     document.getElementById("result").innerHTML = "Tháng " + month + " có 30 ngày";
+                    break;
+                default:
+                    document.getElementById("result").innerHTML = "Bạn chưa nhập tháng";
+
             }
         }
     </script>

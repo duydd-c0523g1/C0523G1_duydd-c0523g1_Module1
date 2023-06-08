@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Luyen tap 1-4</title>
+    <script>
+      function inspect() {
+        let numA = parseFloat(document.getElementById("numA").value);
+        let numB = parseFloat(document.getElementById("numB").value);
+        let numC = parseFloat(document.getElementById("numC").value);
+        let max = numA
+
+        if (numB > max) {
+            if (numC > numB) {
+                result = numC + " là giá trị lớn nhất";
+            } else {
+                result = numB + " là giá trị lớn nhất";
+            }
+        } else {
+            result = numA + " là giá trị lớn nhất";
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="numA" placeholder="Nhập số a">
+    <input type="number" id="numB" placeholder="Nhập số b">
+    <input type="number" id="numC" placeholder="Nhập số c">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

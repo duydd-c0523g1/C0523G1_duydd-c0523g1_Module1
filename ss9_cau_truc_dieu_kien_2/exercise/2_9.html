@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kiểm tra 3 cạnh tam giác</title>
+    <script>
+        function inspect() {
+            let lengthA = parseFloat(document.getElementById("lengthA").value);
+            let lengthB = parseFloat(document.getElementById("lengthB").value);
+            let lengthC = parseFloat(document.getElementById("lengthC").value);
+
+            if (lengthA > 0 && lengthB > 0 && lengthC > 0) {
+                if ((lengthA + lengthB) > lengthC && (lengthB + lengthC) > lengthA && (lengthA + lengthC) > lengthB) {
+                    Result = "Đây là 3 cạnh của một hình tam giác"
+                } else
+                    Result = "Đây không phải 3 cạnh của một hình tam giác"
+            } else
+                Result = "0 không phải là một cạnh của tam giác"
+
+            document.getElementById("result").innerHTML = Result;
+
+            //a, b, c > 0
+            //a + b > c
+            //b + c > a
+            //a + c > b
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Kiểm tra 3 cạnh tam giác</h2>
+    <input type="number" id="lengthA" placeholder="Nhập độ dài cạnh a">
+    <input type="number" id="lengthB" placeholder="Nhập độ dài cạnh a">
+    <input type="number" id="lengthC" placeholder="Nhập độ dài cạnh a">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+
+</html>

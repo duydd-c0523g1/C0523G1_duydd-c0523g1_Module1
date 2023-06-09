@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tính giá điện</title>
+    <script>
+      function inspect() {
+        let numberOrigin = parseInt(document.getElementById("numberOrigin").value);
+        let number = parseInt(document.getElementById("number").value);
+        let price = parseInt(3800)
+        Result = "Số tiền điện bạn phải trả lần này là " + ((number - numberOrigin) * price) +"VND" + " cho " + (number - numberOrigin) + " số điện</br>" + "Giá điện: " + price + "VND/số";
+
+        document.getElementById("result").innerHTML = Result;
+
+        //1 số điện = 3800đ
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Tính giá điện</h2>
+    <input type="number" id="numberOrigin" placeholder="Nhập số điện ban đầu">
+    <input type="number" id="number" placeholder="Nhập số điện hiện tại">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

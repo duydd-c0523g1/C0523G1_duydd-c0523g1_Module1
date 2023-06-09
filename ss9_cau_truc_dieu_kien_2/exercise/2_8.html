@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kiểm tra tuổi</title>
+    <script>
+      function inspect() {
+        let age = parseInt(document.getElementById("num").value);
+
+        if (age > 0 && age < 120)        
+            Result = age + " là tuổi người";
+        else
+        Result = age + " không là tuổi người";
+
+        document.getElementById("result").innerHTML = Result;
+
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Kiểm tra tuổi</h2>
+    <input type="number" id="num" placeholder="Nhập tuổi">
+    <button onclick="inspect()">Kiểm tra</button>
+    <p id="result"></p>
+  </body>
+</html>

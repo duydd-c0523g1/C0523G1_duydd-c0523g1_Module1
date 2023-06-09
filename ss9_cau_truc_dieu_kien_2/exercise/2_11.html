@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tính thuế thu nhập cá nhân</title>
+    <script>
+        function inspect() {
+            let income = parseFloat(document.getElementById("income").value);
+
+            if (income <= 5 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.05) + "VND");
+            } else if (income <= 10 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.1) + "VND");
+            } else if (income <= 18 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.15) + "VND");
+            } else if (income <= 32 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.2) + "VND");
+            } else if (income <= 52 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.25) + "VND");
+            } else if (income <= 80 && income > 0) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.3) + "VND");
+            } else if (income > 80) {
+                alert("Thuế TNCN hàng tháng của bạn là: " + (income * 1000000 * 0.35) + "VND");
+            } else
+                alert("Nhập tối thiểu là 1 triệu");
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Tính thuế thu nhập cá nhân theo tháng</h2>
+    <input type="number" id="income" placeholder="Nhập thu nhập tháng"> <span>Triệu đồng</span><br>
+    <button onclick="inspect()">Kiểm tra</button>
+</body>
+
+</html>

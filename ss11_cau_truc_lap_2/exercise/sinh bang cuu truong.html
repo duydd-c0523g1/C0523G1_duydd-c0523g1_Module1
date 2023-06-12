@@ -22,11 +22,11 @@
     <script>
         let result = ""
         for (let i = 2; i <= 9; i++) {
-            result = result + "<tr>";
+            result += "<tr>";
             for (let j = 1; j <= 10; j++ ) {
-                result = result + ("<td>" + i + " x " + j + " = " + (i*j) + "</td>");
+            result = result + ("<td>" + i + " x " + j + " = " + (i*j) + "</td>");
             }
-            result = result + "</tr>";
+            result += "</tr>";
         }
         document.write ("<table>" + result +"</table>");
     </script>

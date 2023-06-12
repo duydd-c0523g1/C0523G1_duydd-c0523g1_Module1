@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuyển đổi nhiệt độ</title>
+    <script>
+      function inspect() {
+        let deposit = parseFloat(document.getElementById("deposit").value);
+        let year = parseFloat(document.getElementById("year").value);
+        let profit = Math.pow(deposit * (1 + 0.07), year);
+        alert("Lãi suất ở năm thứ " + year + " của bạn là: " + profit + " VND, với lãi suất hàng tháng là:" + (profit / 12) + "VND");
+        
+        //Lãi suất là 7%
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Chuyển đổi độ C sang độ F</h2>
+    <input type="number" id="deposit" placeholder="Nhập số tiền muốn gửi">
+    <input type="number" id="year" placeholder="Nhập thời hạn gửi">
+    </select>
+    <button onclick="inspect()">Kiểm tra</button>
+
+  </body>
+</html>

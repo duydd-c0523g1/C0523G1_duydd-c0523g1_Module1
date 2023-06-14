@@ -3,18 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tam giác vuông có cạnh dưới cùng bên phải</title>
+    <title>Tam giác vuông có góc vuông trên cùng bên phải</title>
 </head>
 
 <body>
-    <h1 style="text-align: center;">Tam giác vuông có cạnh dưới cùng bên phải</h1>
+    <h1 style="text-align: center;">Tam giác vuông có góc vuông trên cùng bên phải</h1>
     <script>
         let Size = 5;
 
         for (let i = 0; i < Size; i++) {
             let row = "";
             for (let j = 0; j < Size; j++) {
-                if (j < Size - i - 1) {
+                if (j < i) {
                     row += "&nbsp;&nbsp;";
                 } else {
                     row += "*";

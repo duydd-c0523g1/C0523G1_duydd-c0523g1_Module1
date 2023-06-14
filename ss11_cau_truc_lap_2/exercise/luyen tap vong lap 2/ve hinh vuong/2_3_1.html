@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <title>Tam giác vuông có cạnh dưới cùng bên trái</title>
 </head>
+
 <body>
     <h1 style="text-align: center;"> Tam giác vuông có cạnh dưới cùng bên trái</h1>
     <script>
-        let hinh = '*';
-        for (let i = 1; i <= 5; i++) {
-            document.write(hinh + "<br>");
-            hinh += "*";
+
+        var Size = 5;
+
+        for (var i = 0; i < Size; i++) {
+            var row = "";
+            for (var j = 0; j <= i; j++) {
+                row += "*";
+                hinh = row + "<br>";
+            }
+            document.write(hinh);
         }
     </script>
 

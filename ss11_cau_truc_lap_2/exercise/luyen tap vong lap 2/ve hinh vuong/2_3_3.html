@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác vuông có cạnh dưới cùng bên phải</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Tam giác vuông có cạnh dưới cùng bên phải</h1>
+    <script>
+        var Size = 5;
+
+        for (var i = 0; i < Size; i++) {
+            var row = "";
+            for (var j = 0; j < Size; j++) {
+                if (j < Size - i - 1) {
+                    row += "&nbsp;&nbsp;";
+                } else {
+                    row += "*";
+                }
+            }
+            document.write(row + "<br>");
+        }
+    </script>
+</body>
+
+</html>

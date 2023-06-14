@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thêm và hiển thị mảng</title>
+    <style>
+        #inputField {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputField" placeholder="Nhập phần tử">
+    <button onclick="addItem()">Add</button>
+    <button onclick="displayItems()">Display</button>
+    <ul id="itemList"></ul>
+
+    <script>
+        let items = [];
+
+        function addItem() {
+            const inputField = document.getElementById('inputField');
+            const newItem = inputField.value;
+
+            if (newItem !== '') {
+                items.push(newItem);
+                inputField.value = '';
+            }
+        }
+
+        function displayItems() {
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = '';
+
+            for (let i = 0; i < items.length; i++) {
+                const listItem = document.createElement('li');
+                listItem.appendChild(document.createTextNode(items[i]));
+                itemList.appendChild(listItem);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

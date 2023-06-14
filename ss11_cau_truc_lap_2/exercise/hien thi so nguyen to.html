@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên đầu tiên</title>
+</head>
+
+<body>
+    <h2>Hiển thị số nguyên đầu tiên</h2>
+    <script>
+        // Nhập số tự nhiên từ người dùng
+        let input = parseInt(prompt("Nhập một số tự nhiên:"));
+
+        // Hàm kiểm tra số nguyên tố
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Hiển thị 20 số nguyên tố đầu tiên
+        let count = 0;
+        let currentNumber = 2;
+
+        while (count < 20) {
+            if (isPrime(currentNumber)) {
+                document.write(currentNumber + "<br>");
+                count++;
+            }
+            currentNumber++;
+        }     
+    </script>
+</body>
+
+</html>

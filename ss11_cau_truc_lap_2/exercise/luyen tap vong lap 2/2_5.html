@@ -3,37 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hình chữ nhật rỗng</title>
+    <title>Tính lãi ngân hàng</title>
 </head>
 
 <body>
-    <h1 style="text-align: center;">Hình trái tim</h1>
+
+    <h1>Tính lãi ngân hàng</h1>
+    <input type="number" name="deposit" id="deposit" placeholder="Số tiền cần vay">
+    <input type="number" name="duration" id="duration" placeholder="Thời gian vay (tháng)">
+    <input type="number" name="percent" id="percent" placeholder="Lãi Suất">
+    <button onclick="check()">Kiểm tra</button>
     <script>
-        var rows = 6;
+        function check() {
+            let deposit = +document.getElementById("deposit").value;
+            let duration = +document.getElementById("duration").value;
+            let percent = +document.getElementById("percent").value;
 
-        // Vẽ nửa trên của trái tim
-        for (var i = 1; i <= rows; i++) {
-            var line = "";
-            for (var j = 1; j <= rows - i; j++) {
-                line += " ";
+            for (i = 0; i < duration; i++) {
+                deposit += (deposit * (percent / 100));
             }
-            for (var k = 1; k <= 2 * i - 1; k++) {
-                line += "*";
-            }
-            document.write(line + "<br>");
+            alert("Số tiền bạn phải trả sau " + duration + " tháng là " + Math.round(deposit) + "VND");
         }
 
-        // Vẽ nửa dưới của trái tim
-        for (var i = rows - 1; i >= 1; i--) {
-            var line = "";
-            for (var j = 1; j <= rows - i; j++) {
-                line += " ";
-            }
-            for (var k = 1; k <= 2 * i - 1; k++) {
-                line += "*";
-            }
-            document.write(line);
-        }
 
     </script>
 </body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật rỗng</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Hình chữ nhật rỗng</h1>
+    <script>
+        let width = 11;
+        let height = 5;
+
+        for (let i = 0; i < height; i++) {
+            let row = "";
+            for (let j = 0; j < width; j++) {
+                if (i === 0 || i === height - 1 || j === 0 || j === width - 1) {
+                    row += "*";
+                } else {
+                    row += "&nbsp;&nbsp;";
+                }
+            }
+            document.write(row + "<br>");
+        }
+    </script>
+</body>
+
+</html>

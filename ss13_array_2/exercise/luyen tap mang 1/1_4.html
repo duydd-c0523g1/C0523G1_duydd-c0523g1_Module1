@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <input type="number" name="Array" id="array" placeholder="Nhập các phần tử">
+    <button onclick="add()">Add</button>
+    <button onclick="reverse()">Đảo ngược</button>
+    <div id="display"></div>
+    <div id="displayRev"></div>
+    <script>
+        let arr = []; // Đặt biến arr ở ngoài hàm để lưu trữ các phần tử
+
+        function add() {
+            let element = parseInt(document.getElementById("array").value);
+
+            arr.push(element);
+            let display = arr.join(", ");
+
+            document.getElementById("array").value = ""
+            document.getElementById("display").innerHTML = display;
+        }
+
+        function reverse() {
+            Reverse = "Đảo ngược: " + arr.reverse();
+
+            document.getElementById("displayRev").innerHTML = Reverse;
+        }
+    </script>
+</body>
+
+</html>

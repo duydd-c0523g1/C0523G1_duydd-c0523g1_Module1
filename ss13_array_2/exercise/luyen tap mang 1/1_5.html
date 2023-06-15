@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <input type="text" name="Array" id="array" placeholder="Nhập chữ">
+    <button onclick="countVowels()">Đếm số vowel</button>
+    <div id="display"></div>
+    <script>
+        function countVowels() {
+            const inputString = document.getElementById("array").value;
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            let count = 0;
+            for (let char of inputString) {
+                if (vowels.includes(char.toLowerCase())) {
+                    count++;
+                }
+            }
+            document.getElementById("display").innerText = `Số nguyên âm trong chuỗi '${inputString}' là: ${count}`;
+        }
+    </script>
+</body>
+
+</html>

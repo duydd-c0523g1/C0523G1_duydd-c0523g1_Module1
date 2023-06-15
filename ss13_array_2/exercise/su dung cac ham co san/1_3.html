@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <p><strong>Bài 3:</strong><br> Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi
+        vừa nhập sang thành dạng chữ hoa.<br>
+        Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.</p><br>
+    <div id="result"></div>
+    <script>
+        function toggleCase(str) {
+            var arr = str.split(''); // Chuyển chuỗi thành mảng các ký tự
+
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] === arr[i].toUpperCase()) {
+                    arr[i] = arr[i].toLowerCase(); // Chuyển ký tự chữ hoa thành chữ thường
+                } else {
+                    arr[i] = arr[i].toUpperCase(); // Chuyển ký tự chữ thường thành chữ hoa
+                }
+            }
+
+            return arr.join(''); // Chuyển mảng thành chuỗi và trả về
+        }
+
+        // Kiểm tra kết quả
+        var input = prompt('Nhập một chuỗi:');
+
+        result = "<b>Kết quả:</b> " + toggleCase(input);
+        document.getElementById("result").innerHTML = result;
+
+    </script>
+</body>
+
+</html>

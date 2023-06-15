@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <p><strong>Bài 1:</strong><br> Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại
+        với nhau.<br>
+        Ví dụ có mảng chuỗi như sau: myColor = ["Red", "Green", "White", "Black"];<br>
+        Sau khi thực thi chương trình sẽ trả về dạng như sau : <br><br>
+
+        "Red,Green,White,Black"</p><br>
+        <div id="result"></div>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        result = "<b>Kết quả:</b> " + myColor.join(", ");
+        document.getElementById("result").innerHTML = result;
+        
+    </script>
+</body>
+
+</html>

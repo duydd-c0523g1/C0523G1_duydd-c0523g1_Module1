@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <p><strong>Bài 2:</strong><br>Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2 số chẵn.<br>
+        Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.</p><br>
+    <div id="result"></div>
+    <script>
+        function insertDash(num) {
+            let str = num.toString(); // Chuyển số thành chuỗi
+            let arr = str.split(''); // Chuyển chuỗi thành mảng các ký tự
+
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (parseInt(arr[i]) % 2 === 0 && parseInt(arr[i + 1]) % 2 === 0) {
+                    arr.splice(i + 1, 0, '-'); // Chèn dấu '-' vào vị trí thích hợp
+                    i++; // Điều chỉnh lại chỉ số để không kiểm tra số vừa chèn
+                }
+            }
+
+            return arr.join(''); // Chuyển mảng thành chuỗi và trả về
+        }
+
+        // Kiểm tra kết quả
+        let input = prompt('Nhập một chuỗi số:');
+        let result = "Kết quả: " + insertDash(input);
+        document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+
+</html>

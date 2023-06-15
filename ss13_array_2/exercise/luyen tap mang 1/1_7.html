@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <script>
+        function checkNumberInArray() {
+            const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const V = parseInt(prompt("Nhập số nguyên V:"));
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == V) {
+                    array.splice(i, 1);
+                    array.push(0);
+                    alert(`${V} đã bị xóa khỏi mảng, mảng mới là: ${array}`);
+                }
+            }
+        }
+        checkNumberInArray();
+
+    </script>
+</body>
+
+</html>

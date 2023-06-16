@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh và tính tổng</title>
+</head>
+
+<body>
+    <script>
+        function compareAndSum(param1, param2) {
+            if (param1 > param2) {
+                alert("Giá trị tham số thứ nhất lớn hơn tham số thứ hai");
+            } else {
+                return param1 + param2;
+            }
+        }
+
+        let num1 = +prompt('Nhập vào số thứ nhất');
+        let num2 = +prompt('Nhập vào số thứ hai');
+        let result = compareAndSum(num1, num2);
+        if (result) {
+            document.writeln("Tổng của hai số là: " + result);
+        }
+    </script>
+</body>
+
+</html>

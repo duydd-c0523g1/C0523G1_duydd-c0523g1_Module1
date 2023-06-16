@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa Feet và Meter</title>
+</head>
+
+<body>
+    <h2>Chuyển đổi giữa Feet và Meter</h2>
+
+    <label for="inputFeet">Nhập giá trị:</label>
+    <input type="number" id="inputFeet"><br>
+
+    <button onclick="convertFeetToMeter()">Chuyển sang Meter</button>
+    <button onclick="convertMeterToFeet()">Chuyển sang Feet</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertFeetToMeter() {
+            let feet = document.getElementById("inputFeet").value;
+            let meter = feetToMeter(feet);
+            document.getElementById("result").innerHTML = `${feet} feet = ${meter} meters`;
+        }
+
+        function convertMeterToFeet() {
+            let meter = document.getElementById("inputFeet").value;
+            let feet = meterToFeet(meter);
+            document.getElementById("result").innerHTML = `${meter} meters = ${feet} feet`;
+        }
+
+        function feetToMeter(feet) {
+            return feet * 0.3048;
+        }
+
+        function meterToFeet(meter) {
+            return meter / 0.3048;
+        }
+    </script>
+</body>
+
+</html>

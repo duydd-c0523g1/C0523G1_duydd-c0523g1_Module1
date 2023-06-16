@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bài 8</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+            arr.push(number);
+        }
+
+        arr.sort((a, b) => b - a);
+
+        console.log("Mảng đã được sắp xếp theo thứ tự giảm dần:");
+        console.log(arr);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chu vi diện tích hình tròn</title>
+</head>
+
+<body>
+    <input type="number" name="input" id="input" placeholder="Nhập bán kính">
+    <button onclick="perimeter(document.getElementById('input').value)">Tính chu vi</button>
+    <button onclick="area(document.getElementById('input').value)">Tính diện tích</button>
+    <script>
+        function perimeter(banKinh) {
+            let cv = 2 * Math.PI * banKinh;
+            alert(`Chu vi hình tròn là ${Math.round(cv)}`);
+            return ;          
+        }
+
+        function area(banKinh) {
+            let dt =  Math.PI * Math.pow(banKinh, 2)
+            alert(`Diện tích hình tròn là ${Math.round(dt)}`);
+            return;
+        }
+
+        // let input = parseInt(document.getElementById("input").value);
+        // let chuVi = perimeter(input);
+        // let dienTich = area(input);
+    </script>
+
+</body>
+
+</html>

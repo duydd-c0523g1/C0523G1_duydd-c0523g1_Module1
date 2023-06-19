@@ -9,7 +9,7 @@
 <body>
     <h2>Chuyển đổi giữa Feet và Meter</h2>
 
-    <label for="inputFeet">Nhập giá trị:</label>
+    <label for="inputFeet">Nhập giá trị (Feet):</label>
     <input type="number" id="inputFeet"><br>
 
     <button onclick="convertFeetToMeter()">Chuyển sang Meter</button>
@@ -18,23 +18,35 @@
     <p id="result"></p>
 
     <script>
+        // Hàm chuyển đổi từ Feet sang Meter
         function convertFeetToMeter() {
+            // Lấy giá trị từ ô input
             let feet = document.getElementById("inputFeet").value;
+            // Gọi hàm feetToMeter để chuyển đổi giá trị
             let meter = feetToMeter(feet);
+            // Hiển thị kết quả chuyển đổi trên trang HTML
             document.getElementById("result").innerHTML = `${feet} feet = ${meter} meters`;
         }
 
+        // Hàm chuyển đổi từ Meter sang Feet
+        function convertMeterToFeet() {
+            // Lấy giá trị từ ô input
+            let meter = document.getElementById("inputFeet").value;
+            // Gọi hàm meterToFeet để chuyển đổi giá trị
+            let feet = meterToFeet(meter);
+            // Hiển thị kết quả chuyển đổi trên trang HTML
+            document.getElementById("result").innerHTML = `${meter} meters = ${feet} feet`;
+        }
+
+        // Hàm chuyển đổi từ Feet sang Meter
         function feetToMeter(feet) {
+            // Thực hiện chuyển đổi bằng cách nhân giá trị với hệ số chuyển đổi
             return feet * 0.3048;
         }
 
-        function convertMeterToFeet() {
-            let meter = document.getElementById("inputFeet").value;
-            let feet = meterToFeet(meter);
-            document.getElementById("result").innerHTML = `${meter} meters = ${feet} feet`;
-        }        
-
+        // Hàm chuyển đổi từ Meter sang Feet
         function meterToFeet(meter) {
+            // Thực hiện chuyển đổi bằng cách chia giá trị cho hệ số chuyển đổi
             return meter / 0.3048;
         }
     </script>

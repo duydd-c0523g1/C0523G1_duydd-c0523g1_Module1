@@ -8,35 +8,32 @@
 
 <body>
     <h2>Chuyển đổi giữa Feet và Meter</h2>
-
-    <label for="inputFeet">Nhập giá trị:</label>
-    <input type="number" id="inputFeet"><br>
-
-    <button onclick="convertFeetToMeter()">Chuyển sang Meter</button>
-    <button onclick="convertMeterToFeet()">Chuyển sang Feet</button>
-
+    <input type="number" name="input" id="input">
+    <button onclick="convertFeetToMeter()">Feet to Meter</button>
+    <button onclick="convertMeterToFeet()">Meter to feet</button>
     <p id="result"></p>
-
     <script>
         function convertFeetToMeter() {
-            let feet = document.getElementById("inputFeet").value;
+            let feet = document.getElementById("input").value;
             let meter = feetToMeter(feet);
-            document.getElementById("result").innerHTML = `${feet} feet = ${meter} meters`;
+            document.getElementById("result").innerHTML = `${feet} feet = ${meter} meters.`
         }
 
         function feetToMeter(feet) {
-            return feet * 0.3048;
+            return feet * 0.305;
         }
 
         function convertMeterToFeet() {
-            let meter = document.getElementById("inputFeet").value;
+            let meter = document.getElementById("input").value;
             let feet = meterToFeet(meter);
-            document.getElementById("result").innerHTML = `${meter} meters = ${feet} feet`;
-        }        
+            document.getElementById("result").innerHTML = `${meter} meters = ${feet} feet.`
+        }
 
         function meterToFeet(meter) {
-            return meter / 0.3048;
+            return meter * 3.297;
         }
+
+
     </script>
 </body>
 

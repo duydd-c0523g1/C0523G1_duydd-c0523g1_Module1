@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra giá trị nhập vào là số hay chữ</title>
+</head>
+
+<body>
+    <script>
+        function isNumericCharacter(character) {
+            return !isNaN(parseFloat(character)) && isFinite(character);
+        }
+
+        let input = prompt("Nhập giá trị để kiểm tra");
+        let result = isNumericCharacter(input);
+        alert(result);
+    </script>
+</body>
+
+</html>

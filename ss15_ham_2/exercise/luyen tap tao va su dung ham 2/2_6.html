@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+
+<body>
+    <script>
+        function isPositiveNumber(number) {
+            return Number.isInteger(number) && number >= 0;
+        }
+        let input = +prompt("Nhập số bất kỳ");
+        let result = isPositiveNumber(input);
+        alert(result);
+    </script>
+</body>
+
+</html>

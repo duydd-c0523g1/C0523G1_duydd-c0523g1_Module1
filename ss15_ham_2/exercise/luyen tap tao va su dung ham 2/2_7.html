@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ 2 số nguyên</title>
+</head>
+
+<body>
+    <script>
+        function swapIntegers() {
+            let a = +prompt("Nhập số nguyên thứ nhất:");
+            let b = +prompt("Nhập số nguyên thứ hai:");
+
+            let temp = a;
+            a = b;
+            b = temp;
+
+            return [a, b];
+        }
+
+        let swapped = swapIntegers();
+        alert("Sau khi đổi chỗ: " + swapped[0] + ", " + swapped[1]);
+    </script>
+</body>
+
+</html>

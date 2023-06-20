@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+
+<body>
+    <input type="text" , id="array" placeholder="Nhập phần tử">
+    <button onclick="add()">Thêm vào mảng</button>
+    <button onclick="reverse()">Đảo ngược</button>
+    <script>
+        let arr1 = [];
+        let arr2 = [];
+        function add() {
+            let element = document.getElementById("array").value;
+            arr1.push(element);
+            alert(arr1);
+            document.getElementById("array").value = "";
+        }
+        function reverse() {
+            for (let i = arr1.length; i >= 0; i--) {
+                arr2.push(arr1[i]);
+            }
+            alert(arr2);
+        }
+    </script>
+</body>
+
+</html>

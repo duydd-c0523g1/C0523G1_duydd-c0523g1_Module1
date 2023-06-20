@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <input type="text" , id="array" placeholder="Nhập phần tử">
+    <input type="text" id="array" placeholder="Nhập phần tử">
     <button onclick="add()">Thêm vào mảng</button>
-    <button onclick="reverse()">Đảo ngược</button>
+    <button onclick="rev()">Đảo ngược</button>
     <script>
         let arr1 = [];
         let arr2 = [];
@@ -19,7 +19,7 @@
             alert(arr1);
             document.getElementById("array").value = "";
         }
-        function reverse() {
+        function rev() {
             for (let i = arr1.length; i >= 0; i--) {
                 arr2.push(arr1[i]);
             }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị giá trị nhỏ nhất</title>
+</head>
+
+<body>
+    <script>
+        function isLowestNumber(numbers) {
+            if (numbers.length === 0) {
+                return undefined; // Trả về undefined nếu mảng rỗng
+            }
+
+            let min = numbers[0]; // Gán giá trị đầu tiên trong mảng là giá trị nhỏ nhất
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] < min) {
+                    min = numbers[i]; // Cập nhật giá trị nhỏ nhất nếu tìm thấy phần tử nhỏ hơn
+                }
+            }
+
+            return min;
+        }
+
+        let arr = [];
+        for (let i = 0; i < 3; i++) {
+            let input = +prompt(`Nhập vào số thứ ${i + 1}`);
+            arr.push(input);
+        }
+
+        let result = isLowestNumber(arr);
+        alert(result);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Object</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(celcius) {
+                if (celcius < -273) {
+                    throw new Error("Giá trị nhiệt độ không hợp lệ");
+                }
+                this.celcius = celcius
+            }
+
+            getCelcius() {
+                return this.celcius;
+            }
+
+            getFarenheit() {
+                return (this.celcius * 9 / 5) + 32
+            }
+
+            getKevin() {
+                return this.celcius + 273;
+            }
+        }
+
+        // Khởi tạo một đối tượng Temperature với nhiệt độ đơn vị độ C
+        let myTemperature = new Temperature(30);
+
+        //Lấy giá trị độ C, F và K
+        let celcius = myTemperature.getCelcius();
+        let farenheit = myTemperature.getFarenheit();
+        let kevin = myTemperature.getKevin();
+
+        //Hiển thị độ F và K tương ứng
+        document.write(`Độ C: ${celcius}, độ F: ${farenheit}, độ K: ${kevin}`);
+    </script>
+</body>
+
+</html>

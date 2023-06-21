@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle Object</title>
+</head>
+
+<body>
+    <canvas id="demoCanvas" width="500" height="500"></canvas>
+
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+
+            getArea() {
+                return this.length * this.width;
+            }
+
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+
+            drawOnCanvas() {
+                let canvas = document.getElementById("demoCanvas");
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle = "#ff0000";
+                ctx.fillRect(0, 0, this.length, this.width);
+            }
+        }
+
+        // Khởi tạo một đối tượng Rectangle
+        let myRectangle = new Rectangle(150, 100);
+
+        // Hiển thị hình chữ nhật trên canvas
+        myRectangle.drawOnCanvas();
+
+        // Thay đổi chiều dài và chiều rộng của hình chữ nhật
+        myRectangle.length = 200;
+        myRectangle.width = 120;
+
+        // In ra diện tích và chu vi của hình chữ nhật
+        let area = myRectangle.getArea();
+        let perimeter = myRectangle.getPerimeter();
+        document.write("Diện tích: " + area);
+        document.write("Chu vi: " + perimeter);
+    </script>
+</body>
+
+</html>

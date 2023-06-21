@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mobilephone Object</title>
+</head>
+
+<body>
+    <script>
+        class Mobile {
+            constructor() {
+                this.powerOn = false;
+                this.batteryLevel = 0;
+                this.draftMessage = "";
+                this.inbox = [];
+                this.sentMessage = [];
+            }
+
+            checkPowerStatus() {
+                return this.powerOn;
+            }
+
+            powerOnMobile() {
+                this.powerOn = true;
+                this.batteryLevel = 100;
+            }
+
+            powerOffMobile() {
+                this.powerOn = false;
+                this.batteryLevel = 0;
+            }
+
+            chargeBattery() {
+                if (this.powerOn) {
+                    this.batteryLevel = 100;
+                }
+            }
+
+            composeMessage(message) {
+                if (this.powerOn) {
+                    this.draftMessage = message;
+                    this.batteryLevel--;
+                }
+            }
+
+            sendMessage(message, mobile) {
+                if (this.powerOn && mobile.checkPowerStatus()) {
+                    mobile.receiveMessage(message);
+                    this.sentMessage.push(message);
+                    this.batteryLevel--;
+                }
+            }
+
+            viewInbox() {
+                if (this.powerOn) {
+                    return this.sentMessage;
+                }
+            }
+
+            viewSentMessage() {
+                if (this.powerOn) {
+                    return this.sentMessages;
+                }
+            }
+        }
+
+        //Khởi tạo đối tượng Mobile
+        let myMobile = new Mobile();
+
+        //Bật điện thoại
+        myMobile.powerOnMobile();
+
+        //Kiểm tra trạng thái điện thoại
+        document.write("Trạng thái điaạn thoại: " + myMobile.checkPowerStatus());
+
+        //Sạc pin điện thoại
+        myMobile.chargeBattery();
+
+        //Soạn tin nhắn
+        myMobile.composeMessage("Xin chào");
+
+        //Gửi tin nhắn tới một chiếc điện thoại khác
+        let otherMobile = new Mobile();
+        otherMobile.powerOffMobile();
+        myMobile.sendMessage("Chào bạn nhé", otherMobile);
+
+        //Xem tin nhắn trong hộp thứ đến
+        document.write("Hộp thư đến: " + myMobile.viewInbox());
+
+        //Xem lại tin nahwns đã gửi
+        document.write("Tin nhắn đã gửi: " + myMobile.viewSentMessage());
+
+    </script>
+</body>
+
+</html>

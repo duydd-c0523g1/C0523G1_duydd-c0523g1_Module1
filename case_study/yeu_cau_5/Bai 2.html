@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <script>
+        // Kiểm tra xem một số có phải là số nguyên tố hay không
+        function isPrimeNumber(num) {
+            if (num < 2) {
+                return false;
+            }
+
+            // Duyệt qua các ước của số để kiểm tra có ước nào khác 1 và chính nó không
+            // Nếu có, thì số không phải là số nguyên tố
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+
+            // Nếu không có ước nào, thì số là số nguyên tố
+            return true;
+        }
+
+        // Đếm số lượng số nguyên tố trong mảng 2 chiều và liệt kê các số nguyên tố
+        function countAndListPrimeNumbers(matrix) {
+            let count = 0;
+
+            // Duyệt qua từng hàng của mảng 2 chiều
+            for (let i = 0; i < matrix.length; i++) {
+                // Duyệt qua từng phần tử của hàng
+                for (let j = 0; j < matrix[i].length; j++) {
+                    // Kiểm tra xem phần tử có phải là số nguyên tố hay không
+                    if (isPrimeNumber(matrix[i][j])) {
+                        // In ra số nguyên tố và tăng biến đếm lên 1
+                        console.log(matrix[i][j]);
+                        count++;
+                    }
+                }
+            }
+
+            // Trả về số lượng số nguyên tố có trong mảng
+            return count;
+        }
+
+        // Mảng 2 chiều đầu vào
+        const matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // Gọi hàm countAndListPrimeNumbers để đếm số lượng số nguyên tố và liệt kê các số nguyên tố trong mảng
+        const primeCount = countAndListPrimeNumbers(matrix);
+        console.log('Số lượng số nguyên tố có trong mảng: ' + primeCount);
+
+    </script>
+</body>
+
+</html>

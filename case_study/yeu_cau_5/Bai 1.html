@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <script>
+        function sumEvenNumbers(m, n) {
+            let matrix = [];
+
+            // Nhập ma trận từ bàn phím
+            for (let i = 0; i < m; i++) {
+                let row = [];
+                for (let j = 0; j < n; j++) {
+                    let num = parseInt(prompt(`Nhập giá trị cho phần tử (${i}, ${j}):`));
+                    row.push(num);
+                }
+                matrix.push(row);
+            }
+
+            let sum = 0;
+
+            // Tính tổng các số chẵn trong ma trận
+            for (let i = 0; i < m; i++) {
+                for (let j = 0; j < n; j++) {
+                    if (matrix[i][j] % 2 === 0) {
+                        sum += matrix[i][j];
+                    }
+                }
+            }
+
+            return sum;
+        }
+
+        const numRows = parseInt(prompt('Nhập số hàng (m):'));
+        const numCols = parseInt(prompt('Nhập số cột (n):'));
+        const result = sumEvenNumbers(numRows, numCols);
+        document.write('Tổng các số chẵn trong ma trận: ' + result);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <script>
+        function checkVowel(letter) {
+            let vowels = ['o', 'u', 'i', 'a', 'e'];
+            if (vowels.includes(letter.toLowerCase())) {
+                alert(letter + ' là nguyên âm');
+            } else {
+                alert(letter + ' không phải là nguyên âm');
+            }
+        }
+
+        let input = prompt('Nhập một chữ cái để kiểm tra');
+        checkVowel(input);
+    </script>
+</body>
+
+</html>

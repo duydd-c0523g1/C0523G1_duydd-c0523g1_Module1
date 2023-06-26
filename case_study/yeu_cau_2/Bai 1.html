@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <script>
+        function drawHollowTriangle(height) {
+            for (let i = 1; i <= height; i++) {
+                let row = '';
+
+                for (let j = 1; j <= height - i; j++) {
+                    row += ' ';
+                }
+
+                if (i === 1 || i === height) {
+                    for (let j = 1; j <= i; j++) {
+                        row += '*';
+                    }
+                } else {
+                    row += '*';
+
+                    for (let j = 1; j <= i - 2; j++) {
+                        row += ' ';
+                    }
+
+                    row += '*';
+                }
+
+                console.log(row);
+            }
+        }
+
+        const height = parseInt(prompt('Nhập chiều cao của tam giác:'));
+        drawHollowTriangle(height);
+    </script>
+</body>
+
+</html>

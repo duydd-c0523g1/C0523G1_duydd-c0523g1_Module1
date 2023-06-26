@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <script>
+        function findMinMax(matrix) {
+            // Khởi tạo giá trị lớn nhất và nhỏ nhất ban đầu
+            let max = matrix[0][0];
+            let min = matrix[0][0];
+
+            // Duyệt qua từng hàng của mảng 2 chiều
+            for (let i = 0; i < matrix.length; i++) {
+                // Duyệt qua từng phần tử của hàng
+                for (let j = 0; j < matrix[i].length; j++) {
+                    // So sánh giá trị của phần tử với giá trị lớn nhất hiện tại
+                    if (matrix[i][j] > max) {
+                        max = matrix[i][j];
+                    }
+
+                    // So sánh giá trị của phần tử với giá trị nhỏ nhất hiện tại
+                    if (matrix[i][j] < min) {
+                        min = matrix[i][j];
+                    }
+                }
+            }
+
+            // Trả về giá trị lớn nhất và nhỏ nhất trong mảng 2 chiều dưới dạng một đối tượng
+            return {
+                max: max,
+                min: min
+            };
+        }
+
+        // Mảng 2 chiều đầu vào
+        const matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // Gọi hàm findMinMax để tìm giá trị lớn nhất và nhỏ nhất trong mảng
+        const result = findMinMax(matrix);
+        console.log('Giá trị lớn nhất: ' + result.max);
+        console.log('Giá trị nhỏ nhất: ' + result.min);
+
+    </script>
+</body>
+
+</html>

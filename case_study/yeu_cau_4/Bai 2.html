@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <script>
+        function differentSymbolsNaive(s) {
+            const charCount = {};
+            let count = 0;
+
+            for (let i = 0; i < s.length; i++) {
+                const char = s[i];
+                if (!charCount[char]) {
+                    charCount[char] = true;
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        const inputString = prompt('Nhập xâu ký tự:');
+        const result = differentSymbolsNaive(inputString);
+        document.write('Số lượng ký tự khác nhau: ' + result);
+
+    </script>
+</body>
+
+</html>

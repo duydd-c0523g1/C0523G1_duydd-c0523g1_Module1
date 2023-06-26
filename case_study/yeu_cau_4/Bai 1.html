@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <script>
+        function normalizeString(str) {
+            const words = str.trim().split(/\s+/);
+            const normalizedWords = words.map(function (word) {
+                const lowerCaseWord = word.toLowerCase();
+                const capitalizedWord = lowerCaseWord.substring(0, 1).toUpperCase() + lowerCaseWord.substring(1);
+                return capitalizedWord;
+            });
+            return normalizedWords.join(' ');
+        }
+
+        function findLongestWord(str) {
+            const words = str.split(' ');
+            let longestWord = '';
+            words.forEach(function (word) {
+                if (word.length > longestWord.length) {
+                    longestWord = word;
+                }
+            });
+            return longestWord;
+        }
+
+        function main() {
+            const inputString = prompt('Nhập xâu ký tự:');
+            document.write('Xâu ký tự ban đầu: ' + inputString + '<br>');
+            const normalizedString = normalizeString(inputString);
+            document.write('Xâu ký tự đã chuẩn hóa: ' + normalizedString + '<br>');
+            const longestWord = findLongestWord(inputString);
+            document.write('Từ dài nhất: ' + longestWord);
+        }
+
+        main();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <script>
+        function commonCharacterCount(s1, s2) {
+            const charCount1 = getCharCount(s1);
+            const charCount2 = getCharCount(s2);
+            let count = 0;
+
+            for (let char in charCount1) {
+                if (charCount2[char]) {
+                    count += Math.min(charCount1[char], charCount2[char]);
+                }
+            }
+
+            return count;
+        }
+
+        function getCharCount(s) {
+            const charCount = {};
+
+            for (let i = 0; i < s.length; i++) {
+                const char = s[i];
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            return charCount;
+        }
+
+        const inputString1 = prompt('Nhập xâu ký tự thứ nhất:');
+        const inputString2 = prompt('Nhập xâu ký tự thứ hai:');
+        const result = commonCharacterCount(inputString1, inputString2);
+        document.write('Số lượng ký tự chung: ' + result);
+    </script>
+</body>
+
+</html>

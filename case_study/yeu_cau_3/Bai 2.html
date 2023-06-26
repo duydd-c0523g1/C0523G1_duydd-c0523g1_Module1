@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <script>
+        function missingValue(A, B) {
+            const frequencyA = {};
+            const result = [];
+
+            // Tạo bộ đếm tần suất xuất hiện của mỗi phần tử trong mảng A
+            for (let i = 0; i < A.length; i++) {
+                const num = A[i];
+                frequencyA[num] = (frequencyA[num] || 0) + 1;
+            }
+
+            // Kiểm tra mỗi phần tử trong mảng B
+            for (let i = 0; i < B.length; i++) {
+                const num = B[i];
+
+                // Nếu phần tử không xuất hiện trong mảng A và chưa được thêm vào kết quả
+                if (!frequencyA[num] && !result.includes(num)) {
+                    result.push(num);
+                }
+            }
+
+            return result;
+        }
+
+        const A = [7, 2, 5, 3, 5, 3];
+        const B = [7, 2, 5, 4, 6, 3, 5, 3];
+        const result = missingValue(A, B);
+        console.log(result); // Output: [4, 6]
+    </script>
+</body>
+
+</html>

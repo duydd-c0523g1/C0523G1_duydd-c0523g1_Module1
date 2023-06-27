@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống quản lý học viên</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hệ thống quản lý học viên</h1>
+
+    <button onclick="addStudent()">Thêm mới học viên</button>
+    <button onclick="editStudent()">Sửa thông tin học viên</button>
+    <button onclick="deleteStudent()">Xóa học viên</button>
+
+    <table id="studentTable">
+        <tr>
+            <th>Mã học viên</th>
+            <th>Tên</th>
+            <th>Lớp</th>
+            <th>Email</th>
+            <th>Ngày sinh</th>
+        </tr>
+    </table>
+
+    <script>
+        class Student {
+            constructor(maHocVien, ten, lop, email, ngaySinh) {
+                this.maHocVien = maHocVien;
+                this.ten = ten;
+                this.lop = lop;
+                this.email = email;
+                this.ngaySinh = ngaySinh;
+            }
+        }
+
+        class StudentManager {
+            constructor() {
+                this.students = [];
+            }
+
+            addStudent(student) {
+                this.students.push(student);
+                this.displayStudents();
+            }
+
+            editStudent(maHocVien, updatedInfo) {
+                const student = this.students.find(student => student.maHocVien === maHocVien);
+                if (student) {
+                    Object.assign(student, updatedInfo);
+                    this.displayStudents();
+                } else {
+                    alert('Mã học viên không tồn tại.');
+                }
+            }
+
+            deleteStudent(maHocVien) {
+                const index = this.students.findIndex(student => student.maHocVien === maHocVien);
+                if (index !== -1) {
+                    const confirmDelete = confirm('Bạn có chắc chắn muốn xóa học viên này?');
+                    if (confirmDelete) {
+                        this.students.splice(index, 1);
+                        this.displayStudents();
+                    }
+                } else {
+                    alert('Mã học viên không tồn tại.');
+                }
+            }
+
+            displayStudents() {
+                const table = document.getElementById('studentTable');
+
+                // Xóa dữ liệu cũ
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+                }
+
+                // Thêm dữ liệu mới
+                this.students.forEach(student => {
+                    const row = table.insertRow();
+                    row.insertCell().textContent = student.maHocVien;
+                    row.insertCell().textContent = student.ten;
+                    row.insertCell().textContent = student.lop;
+                    row.insertCell().textContent = student.email;
+                    row.insertCell().textContent = student.ngaySinh;
+                });
+            }
+        }
+
+        const studentManager = new StudentManager();
+
+        function addStudent() {
+            const maHocVien = prompt('Nhập mã học viên:');
+            const ten = prompt('Nhập tên học viên:');
+            const lop = prompt('Nhập lớp học viên:');
+            const email = prompt('Nhập email học viên:');
+            const ngaySinh = prompt('Nhập ngày sinh học viên:');
+
+            const student = new Student(maHocVien, ten, lop, email, ngaySinh);
+            studentManager.addStudent(student);
+        }
+
+        function editStudent() {
+            const maHocVien = prompt('Nhập mã học viên cần sửa thông tin:');
+            const updatedInfo = {};
+
+            updatedInfo.ten = prompt('Nhập tên học viên:');
+            updatedInfo.lop = prompt('Nhập lớp học viên:');
+            updatedInfo.email = prompt('Nhập email học viên:');
+            updatedInfo.ngaySinh = prompt('Nhập ngày sinh học viên:');
+
+            studentManager.editStudent(maHocVien, updatedInfo);
+        }
+
+        function deleteStudent() {
+            const maHocVien = prompt('Nhập mã học viên cần xóa:');
+            studentManager.deleteStudent(maHocVien);
+        }
+    </script>
+</body>
+
+</html>

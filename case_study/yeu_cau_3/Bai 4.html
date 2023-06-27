@@ -9,50 +9,44 @@
 
 <body>
     <script>
-        function orderDrink() {
-            const menu = {
-                1: { name: 'Cafe', price: 10 },
-                2: { name: 'Cam vắt', price: 8 },
-                3: { name: 'Nước ép cà rốt', price: 7 },
-                4: { name: 'Nước ép cà chua', price: 7 },
-                5: { name: 'Nước lọc', price: 5 },
-                6: { name: 'Nước dừa', price: 6 }
-            };
+        const prices = [20000, 25000, 15000, 18000, 10000, 12000];
 
+        function orderDrink() {
             let total = 0;
 
             do {
                 console.log('--- MENU ---');
-                console.log('1. Cafe - $10');
-                console.log('2. Cam vắt - $8');
-                console.log('3. Nước ép cà rốt - $7');
-                console.log('4. Nước ép cà chua - $7');
-                console.log('5. Nước lọc - $5');
-                console.log('6. Nước dừa - $6');
+                console.log('1. Cafe - 20000');
+                console.log('2. Cam vắt - 25000');
+                console.log('3. Nước ép cà rốt - 15000');
+                console.log('4. Nước ép cà chua - 18000');
+                console.log('5. Nước lọc - 10000');
+                console.log('6. Nước dừa - 12000');
                 console.log('7. Thoát gọi món');
 
-                const choice = parseInt(prompt('Vui lòng chọn số thức uống (từ 1 đến 6). Bấm sô 7 để thoát menu'));
+                const choice = parseInt(prompt('Vui lòng chọn số thức uống (từ 1 đến 6). Bấm số 7 để thoát menu'));
 
                 if (choice === 7) {
                     break;
                 }
 
-                const drink = menu[choice];
+                const price = prices[choice - 1];
 
-                if (drink) {
-                    const quantity = parseInt(prompt(`Bạn muốn mua bao nhiêu ${drink.name}?`));
-                    const subtotal = drink.price * quantity;
+                if (price) {
+                    const quantity = parseInt(prompt('Bạn muốn mua bao nhiêu thức uống này?'));
+                    const subtotal = price * quantity;
                     total += subtotal;
-                    console.log(`Tổng tiền: $${subtotal}`);
+                    console.log(`Tổng tiền: ${subtotal}`);
                 } else {
                     console.log('Lựa chọn không hợp lệ. Vui lòng chọn lại.');
                 }
             } while (true);
 
-            alert(`Tổng số tiền cần phải trả: $${total}`);
+            alert(`Tổng số tiền cần phải trả: ${total}`);
         }
 
         orderDrink();
+
 
     </script>
 </body>
